@@ -1,0 +1,163 @@
+.sectionReserve {
+  background-color: rgb(255, 255, 255);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.containerReserve {
+  max-width: 1280px;
+  height: 500px;
+
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  color: #222;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.text h2 {
+  font-size: 2.3rem;
+  color: black;
+  width: 20rem;
+  margin-bottom: 1rem;
+}
+
+.text p {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.logoPorsche {
+  width: 200px;
+  height: 200px;
+}
+
+.form {
+  width: 50%;
+  line-height: 1.4;
+  border-radius: 10px;
+  background: #f9fafb;
+  padding: 2rem;
+}
+
+.titleForm {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.formInputs label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.formInputs input {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+  transition: background-color 3s, border-color 0.3s;
+}
+
+.formInputs input:hover {
+  /* background-color: #222; */
+  border-color: #000000; /* Cambia este color al que prefieras */
+}
+
+.selectForm {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+  margin-bottom: 0.4rem;
+}
+
+.optionForm {
+  width: 100%;
+  height: auto;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.submitButton {
+  width: 100%;
+  height: 40px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  background-color: #ffff;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submitButton:hover {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+@media screen and (max-width: 780px) {
+  .containerReserve {
+    height: auto;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .text,
+  .form {
+    width: 100%;
+  }
+
+  .text h2 {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .logoPorsche {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .containerReserve {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .text,
+  .form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .text h2 {
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .logoPorsche {
+    width: 100px;
+    height: 100px;
+  }
+
+  .form {
+    padding: 1rem;
+  }
+}

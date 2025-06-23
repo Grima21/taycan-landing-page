@@ -1,0 +1,114 @@
+.techonologySection {
+  width: 100%;
+  margin: 5rem auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  /* margin-top: 2rem; */
+}
+
+.techonologyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  max-width: 1280px;
+}
+.techonologyRight {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 600px;
+  flex: 1;
+  padding: 2rem;
+  line-height: 1.4;
+}
+.techonologyTitle {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.techonologyText {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.techonologyBtn {
+  display: inline-block;
+
+  width: 150px;
+  height: 40px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1b3c2e;
+  border: none;
+  border-radius: 0.58rem;
+  text-decoration: noe;
+  cursor: pointer;
+}
+.techonologyLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  flex: 1;
+  padding: 2rem;
+}
+
+.imgTaycan {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* border-radius: 0.58rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .techonologyContainer {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  .techonologyTitle {
+    font-size: 3rem;
+  }
+  .techonologyText {
+    font-size: 1.1rem;
+  }
+  .techonologyBtn {
+    width: 130px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .techonologyContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .techonologyRight {
+    text-align: center;
+    padding: 1rem;
+  }
+  .techonologyTitle {
+    font-size: 2.5rem;
+  }
+  .techonologyText {
+    font-size: 1rem;
+  }
+}
