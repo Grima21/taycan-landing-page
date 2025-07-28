@@ -6,7 +6,7 @@ Landing page responsive y visualmente impactante desarrollada como práctica de 
 
 ## 🔗 Demo en vivo
 
-[🔗 Ver sitio desplegado](https://tusitio.vercel.app) <!-- Reemplaza con tu link en Vercel -->
+[🔗 Ver sitio desplegado](https://taycan-landing-page.vercel.app/) <!-- Reemplaza con tu link en Vercel -->
 
 ---
 
