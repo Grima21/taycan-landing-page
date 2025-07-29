@@ -1,7 +1,5 @@
-import styles from "./Highlights.module.css";
 import { highlights } from "./data";
 import { useRef } from "react";
-
 export default function Highlights() {
   const sliderRef = useRef(null);
 
@@ -11,25 +9,38 @@ export default function Highlights() {
   };
 
   return (
-    <section className={styles.container}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>Taycan Highlights.</h2>
-        <div className={styles.arrows}>
-          <button onClick={() => scroll("left")}>&larr;</button>
-          <button onClick={() => scroll("right")}>&rarr;</button>
+    <section className="px-8 py-12 mt-12 mb-12">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-bold">Taycan Highlights.</h2>
+        <div className="space-x-2">
+          <button
+            onClick={() => scroll("left")}
+            className="ml-2 px-3 py-2 text-xl font-bold bg-white rounded-md transition hover:bg-gray-100"
+          >
+            &larr;
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="px-3 py-2 text-xl font-bold bg-white rounded-md transition hover:bg-gray-100"
+          >
+            &rarr;
+          </button>
         </div>
       </div>
 
-      <div className={styles.slider} ref={sliderRef}>
+      <div
+        className="flex overflow-x-auto gap-6 pb-4 scroll-snap-x scroll-smooth"
+        ref={sliderRef}
+      >
         {highlights.map((item, idx) => (
           <div
             key={idx}
-            className={styles.card}
+            className="relative flex-none w-[650px] h-[650px] rounded-xl overflow-hidden bg-center bg-cover scroll-snap-start"
             style={{ backgroundImage: `url(${item.image})` }}
           >
-            <div className={styles.overlay}>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+            <div className="absolute bottom-0 w-full p-6 bg-gradient-to-t from-black/70 to-transparent text-white">
+              <h3 className="text-4xl mb-4">{item.title}</h3>
+              <p className="text-lg leading-relaxed">{item.description}</p>
             </div>
           </div>
         ))}

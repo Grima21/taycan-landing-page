@@ -1,5 +1,3 @@
-import styles from "./Models.module.css";
-
 // src/components/TaycanModels/data.js
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -39,7 +37,7 @@ export const models = [
       hp: "871 hp",
     },
     topSpeed: "162 mph",
-    image: "./assets/Taycan_green.jpg",
+    image: "./assets/TaycanTurbo.jpg",
   },
   {
     name: "Taycan Turbo S",
@@ -50,7 +48,7 @@ export const models = [
       hp: "938 hp",
     },
     topSpeed: "162 mph",
-    image: "./assets/Taycan_green.jpg",
+    image: "./assets/TaycanTurbo.webp",
   },
   {
     name: "Taycan Turbo GT",
@@ -61,35 +59,44 @@ export const models = [
       hp: "1,019 hp",
     },
     topSpeed: "180 mph",
-    image: "./assets/Taycan_green.jpg",
+    image: "./assets/TaycanTurboGT.jpg",
   },
 ];
 
 export default function ModelCard() {
   return (
-    <section className={styles.grid}>
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8">
       {models.map((car) => (
-        <div className={styles.card} key={car.name}>
-          <span className={styles.badge}>{baseInfo.type}</span>
-          <img className={styles.image} src={car.image} alt={car.name} />
-          <h2 className={styles.title}>{car.name}</h2>
-          <p className={styles.price}>From {car.price}</p>
-          <p className={styles.disclaimer}>{baseInfo.disclaimer}</p>
+        <div
+          key={car.name}
+          className="bg-[#efefef] p-6 rounded-xl shadow-md leading-relaxed"
+        >
+          <span className="bg-white text-black px-3 py-1 text-sm rounded-md shadow-sm font-semibold">
+            {baseInfo.type}
+          </span>
+          <img src={car.image} alt={car.name} className="w-full h-auto my-4" />
+          <h2 className="text-2xl font-semibold mb-2">{car.name}</h2>
+          <p className="font-bold text-gray-600">From {car.price}</p>
+          <p className="text-sm text-gray-500 my-2">{baseInfo.disclaimer}</p>
 
-          <p className={styles.bold}>{car.acceleration}</p>
-          <p className={styles.label}>{baseInfo.accelerationLabel}</p>
+          <p className="font-bold text-xl">{car.acceleration}</p>
+          <p className="text-sm text-gray-500 mb-4">
+            {baseInfo.accelerationLabel}
+          </p>
 
-          <p className={styles.bold}>
+          <p className="font-bold text-xl">
             {car.power.kw} / {car.power.hp}
           </p>
-          <p className={styles.label}> {baseInfo.powerLabel}</p>
+          <p className="text-sm text-gray-500 mb-4">{baseInfo.powerLabel}</p>
 
-          <p className={styles.bold}>{car.topSpeed}</p>
-          <p className={styles.label}>{baseInfo.speedLabel}</p>
+          <p className="font-bold text-xl">{car.topSpeed}</p>
+          <p className="text-sm text-gray-500 mb-4">{baseInfo.speedLabel}</p>
 
-          <div className={styles.buttons}>
-            <button className={styles.btn}>{baseInfo.buttons.configure}</button>
-            <button className={`${styles.btn} ${styles.outline}`}>
+          <div className="flex gap-2 mt-6">
+            <button className="flex-1 h-10 px-4 rounded-md bg-black text-white font-bold transition hover:bg-gray-800">
+              {baseInfo.buttons.configure}
+            </button>
+            <button className="flex-1 h-10 px-4 rounded-md bg-white text-black border border-black font-bold transition hover:bg-gray-200">
               {baseInfo.buttons.techData}
             </button>
           </div>

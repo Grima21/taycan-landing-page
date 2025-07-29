@@ -1,38 +1,125 @@
-import styles from "./NavBar.module.css";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+} from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+
+const navigation = [
+  { name: "Home", href: "/", current: true },
+  { name: "Configure", href: "/about", current: false },
+  { name: "Experience", href: "/gallery", current: false },
+  { name: "Service", href: "/contact", current: false },
+];
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
 export default function NavBar() {
   return (
-    <header className={styles.header}>
-      <div className={styles.headerImg}>
-        <nav className={styles.navBar}>
-          <div className={styles.container}>
-            <div className={styles.logo}>
-              <a href="/">TAYCAN</a>
-            </div>
-            <ul className={styles.navLinks}>
-              <li className={styles.navItem}>
-                <a href="/">Home</a>
-              </li>
-              <li className={styles.navItem}>
-                <a href="/about">Configure</a>
-              </li>
-              <li className={styles.navItem}>
-                <a href="/gallery">Experience</a>
-              </li>
-              <li className={styles.navItem}>
-                <a href="/contact">Service</a>
-              </li>
-            </ul>
-            <button className={styles.navBtn}>Contact</button>
-          </div>
-        </nav>
-        <div className={styles.hero}>
-          <div className={styles.heroContent}>
-            <div className={styles.heroText}>
-              <h1 className={styles.heroTitle}>Driven By Dreams</h1>
-            </div>
-          </div>
-          <div className={styles.heroButton}>
-            <button className={styles.heroBtn}>Explore </button>
+    <header className="w-full h-[600px] sm:h-[850px] relative">
+      <div
+        className="w-full h-full bg-center bg-no-repeat bg-cover"
+        style={{ backgroundImage: "url(./assets/Taycan_green.jpg)" }}
+      >
+        <Disclosure
+          as="nav"
+          className="bg-gray-400/70 rounded-3xl max-w-[1280px] mx-auto px-4 py-4"
+        >
+          {({ open }) => (
+            <>
+              <div className="relative flex h-16 items-center justify-between">
+                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                  <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-inset">
+                    <Bars3Icon
+                      className={classNames(
+                        open ? "hidden" : "block",
+                        "h-6 w-6"
+                      )}
+                    />
+                    <XMarkIcon
+                      className={classNames(
+                        open ? "block" : "hidden",
+                        "h-6 w-6"
+                      )}
+                    />
+                  </DisclosureButton>
+                </div>
+                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                  <div className="flex shrink-0 items-center">
+                    <span className="text-white text-xl font-bold">TAYCAN</span>
+                  </div>
+                  <div className="hidden sm:ml-6 sm:block">
+                    <div className="flex space-x-4">
+                      {navigation.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          aria-current={item.current ? "page" : undefined}
+                          className={classNames(
+                            item.current
+                              ? "bg-gray-900 text-white"
+                              : "text-white hover:bg-gray-700 hover:text-white",
+                            "rounded-md px-3 py-2 text-sm font-medium"
+                          )}
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                  <button
+                    type="button"
+                    className="relative w-[100px] h-[35px] text-sm bg-white text-black rounded-full shadow-md hover:bg-gray-900 hover:text-white transition duration-300"
+                  >
+                    Contact
+                  </button>
+                </div>
+              </div>
+
+              <DisclosurePanel className="sm:hidden">
+                <div className="space-y-1 px-2 pt-2 pb-3">
+                  {navigation.map((item) => (
+                    <DisclosureButton
+                      key={item.name}
+                      as="a"
+                      href={item.href}
+                      aria-current={item.current ? "page" : undefined}
+                      className={classNames(
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-white hover:bg-gray-700 hover:text-white",
+                        "block rounded-md px-3 py-2 text-base font-medium"
+                      )}
+                    >
+                      {item.name}
+                    </DisclosureButton>
+                  ))}
+                </div>
+              </DisclosurePanel>
+            </>
+          )}
+        </Disclosure>
+
+        {/* HERO */}
+        <div className="flex flex-col items-center justify-center text-center px-4 mt-8 sm:mt-12">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-white font-semibold drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
+            Driven By Dreams
+          </h1>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <button className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition">
+              Especificar
+            </button>
+            <button className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition">
+              Highlights
+            </button>
           </div>
         </div>
       </div>
