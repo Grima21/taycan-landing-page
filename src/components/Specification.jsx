@@ -1,6 +1,8 @@
+import { SECTIONS } from "../constants/sections";
+
 export default function Specification() {
   return (
-    <section className="w-full h-auto md:h-[600px]">
+    <section id={SECTIONS.SPECIFICATION} className="w-full h-auto md:h-[600px]">
       <div className="flex flex-col md:flex-row w-full h-full">
         {/* LEFT */}
         <div className="w-full md:w-1/2 bg-[#111] flex items-center justify-center">

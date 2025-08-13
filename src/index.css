@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --nav-h: 80px;
+} /* ajusta si tu nav es más alto */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h); /* evita que el nav tape el título */
+}
+section,
+[id] {
+  /* por si usas el id en <section> o headings */
+  scroll-margin-top: var(--nav-h);
+}

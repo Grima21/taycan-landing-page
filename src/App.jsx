@@ -1,6 +1,6 @@
 import NavBar from "./components/NavBar";
 import TechnologyPreview from "./components/TechonologyPreview";
-import "./App.css";
+
 import Specification from "./components/Specification";
 import Models from "./components/Models";
 import Highlights from "./components/Highlights/Highlights";

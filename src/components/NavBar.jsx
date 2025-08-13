@@ -1,3 +1,4 @@
+import { SECTIONS } from "../constants/sections";
 import {
   Disclosure,
   DisclosureButton,
@@ -10,10 +11,11 @@ import {
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Configure", href: "/about", current: false },
-  { name: "Experience", href: "/gallery", current: false },
-  { name: "Service", href: "/contact", current: false },
+  { name: "Home", href: `#${SECTIONS.HERO}`, current: true },
+  { name: "Highlights", href: `#${SECTIONS.HIGHLIGHT}`, current: false },
+  { name: "Models", href: `#${SECTIONS.MODELS}`, current: false },
+  { name: "Reserve", href: `#${SECTIONS.RESERVE}`, current: false },
+  { name: "Specification", href: `#${SECTIONS.SPECIFICATION}`, current: false },
 ];
 
 function classNames(...classes) {
@@ -22,18 +24,18 @@ function classNames(...classes) {
 
 export default function NavBar() {
   return (
-    <header className="w-full h-[600px] sm:h-[850px] relative">
+    <header className="w-full h-[600px] sm:h-[850px] ">
       <div
         className="w-full h-full bg-center bg-no-repeat bg-cover"
         style={{ backgroundImage: "url(./assets/Taycan_green.jpg)" }}
       >
         <Disclosure
           as="nav"
-          className="bg-gray-400/70 rounded-3xl max-w-[1280px] mx-auto px-4 py-4"
+          className="bg-gray-400/70 rounded-lg max-w-[1280px]  mx-auto px-4 py-4 "
         >
           {({ open }) => (
             <>
-              <div className="relative flex h-16 items-center justify-between">
+              <div className="relative flex h-11 items-center justify-between ">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-inset">
                     <Bars3Icon
@@ -75,12 +77,12 @@ export default function NavBar() {
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <button
-                    type="button"
-                    className="relative w-[100px] h-[35px] text-sm bg-white text-black rounded-full shadow-md hover:bg-gray-900 hover:text-white transition duration-300"
+                  <a
+                    href={`#${SECTIONS.RESERVE}`}
+                    className="text-center flex items-center justify-center font-semibold relative w-[100px] h-[35px] text-sm bg-white text-black rounded-full shadow-md hover:bg-gray-900 hover:text-white transition duration-300"
                   >
                     Contact
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -109,17 +111,26 @@ export default function NavBar() {
         </Disclosure>
 
         {/* HERO */}
-        <div className="flex flex-col items-center justify-center text-center px-4 mt-8 sm:mt-12">
+        <div
+          id={SECTIONS.HERO}
+          className="flex flex-col items-center justify-center text-center px-4 mt-8 sm:mt-12"
+        >
           <h1 className="text-4xl sm:text-5xl md:text-6xl text-white font-semibold drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
             Driven By Dreams
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <button className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition">
+            <a
+              href={`#${SECTIONS.MODELS}`}
+              className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition"
+            >
               Especificar
-            </button>
-            <button className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition">
+            </a>
+            <a
+              href={`#${SECTIONS.HIGHLIGHT}`}
+              className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition"
+            >
               Highlights
-            </button>
+            </a>
           </div>
         </div>
       </div>

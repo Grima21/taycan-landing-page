@@ -1,6 +1,5 @@
-// src/components/TaycanModels/data.js
+import { SECTIONS } from "../constants/sections";
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const baseInfo = {
   type: "Electric",
   disclaimer:
@@ -65,7 +64,10 @@ export const models = [
 
 export default function ModelCard() {
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8">
+    <section
+      id={SECTIONS.MODELS}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8"
+    >
       {models.map((car) => (
         <div
           key={car.name}

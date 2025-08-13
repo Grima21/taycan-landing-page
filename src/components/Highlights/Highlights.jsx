@@ -1,3 +1,4 @@
+import { SECTIONS } from "../../constants/sections";
 import { highlights } from "./data";
 import { useRef } from "react";
 export default function Highlights() {
@@ -9,7 +10,7 @@ export default function Highlights() {
   };
 
   return (
-    <section className="px-8 py-12 mt-12 mb-12">
+    <section id={SECTIONS.HIGHLIGHT} className="px-8 py-12 mt-12 mb-12">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold">Taycan Highlights.</h2>
         <div className="space-x-2">

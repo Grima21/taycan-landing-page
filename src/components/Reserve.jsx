@@ -1,3 +1,4 @@
+import { SECTIONS } from "../constants/sections";
 export default function Reserve() {
   const taycanModels = [
     "Taycan",
@@ -10,7 +11,10 @@ export default function Reserve() {
   ];
 
   return (
-    <section className="bg-white my-8 flex justify-center">
+    <section
+      id={SECTIONS.RESERVE}
+      className="bg-white my-8 flex justify-center"
+    >
       <div className="max-w-[1280px] w-full flex flex-col lg:flex-row gap-8 p-4 lg:p-0">
         {/* Text Section */}
         <div className="w-full lg:w-1/2 flex flex-col text-gray-800 text-base leading-relaxed">
