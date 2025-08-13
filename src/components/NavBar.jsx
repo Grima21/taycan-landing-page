@@ -30,6 +30,7 @@ export default function NavBar() {
         style={{ backgroundImage: "url(./assets/Taycan_green.jpg)" }}
       >
         <Disclosure
+          aria-label="Principal"
           as="nav"
           className="bg-gray-400/70 rounded-lg max-w-[1280px]  mx-auto px-4 py-4 "
         >
@@ -37,7 +38,20 @@ export default function NavBar() {
             <>
               <div className="relative flex h-11 items-center justify-between ">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-inset">
+                  <DisclosureButton
+                    aria-label={
+                      open
+                        ? "Cerrar menú de navegación"
+                        : "Abrir menú de navegación"
+                    }
+                    className="group relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-inset"
+                  >
+                    <span className="sr-only">
+                      {open
+                        ? "Cerrar menú de navegación"
+                        : "Abrir menú de navegación"}
+                    </span>
+
                     <Bars3Icon
                       className={classNames(
                         open ? "hidden" : "block",
