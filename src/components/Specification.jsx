@@ -1,13 +1,18 @@
 import { SECTIONS } from "../constants/sections";
+import Reveal from "./Reveal"; // o "../components/Reveal" si no tienes alias
 
 export default function Specification() {
   return (
-    <section id={SECTIONS.SPECIFICATION} className="w-full h-auto md:h-[600px]">
+    <Reveal
+      as="section"
+      id={SECTIONS.SPECIFICATION}
+      className="w-full h-auto md:h-[700px]  "
+    >
       <div className="flex flex-col md:flex-row w-full h-full">
         {/* LEFT */}
         <div className="w-full md:w-1/2 bg-[#111] flex items-center justify-center">
           <img
-            src="../assets/specification-img.jpg"
+            src="../assets/taycan-spec.webp"
             alt="Taycan Specification"
             className="w-full h-full object-cover"
           />
@@ -44,6 +49,6 @@ export default function Specification() {
           </div>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }

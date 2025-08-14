@@ -1,6 +1,8 @@
 import { SECTIONS } from "../../constants/sections";
 import { highlights } from "./data";
 import { useRef } from "react";
+import Reveal from "../Reveal"; // o "../components/Reveal" si no tienes alias
+
 export default function Highlights() {
   const sliderRef = useRef(null);
 
@@ -10,7 +12,11 @@ export default function Highlights() {
   };
 
   return (
-    <section id={SECTIONS.HIGHLIGHT} className="px-8 py-12 mt-12 mb-12">
+    <Reveal
+      as="section"
+      id={SECTIONS.HIGHLIGHT}
+      className="px-8 py-12 mt-12 mb-12"
+    >
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold">Taycan Highlights.</h2>
         <div className="space-x-2">
@@ -46,6 +52,6 @@ export default function Highlights() {
           </div>
         ))}
       </div>
-    </section>
+    </Reveal>
   );
 }

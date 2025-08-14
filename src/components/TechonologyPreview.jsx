@@ -1,6 +1,11 @@
+import Reveal from "./Reveal"; // o "../components/Reveal" si no tienes alias
+
 export default function TechnologyPreview() {
   return (
-    <section className="w-full my-20 flex flex-col items-center justify-center p-8 bg-white">
+    <Reveal
+      as="section"
+      className="w-full sm:h-[700px] my-20 flex flex-col items-center justify-center p-8 bg-white"
+    >
       <div className="w-full max-w-[1280px] flex flex-col md:flex-row items-center justify-center gap-20">
         {/* RIGHT */}
         <div className="w-full md:w-1/2 max-w-[600px] flex flex-col items-start justify-center p-8 md:text-left text-center">
@@ -29,6 +34,6 @@ export default function TechnologyPreview() {
           </div>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }

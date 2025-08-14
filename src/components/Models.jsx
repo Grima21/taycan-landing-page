@@ -1,4 +1,5 @@
 import { SECTIONS } from "../constants/sections";
+import Reveal from "./Reveal"; // o "../components/Reveal" si no tienes alias
 
 export const baseInfo = {
   type: "Electric",
@@ -25,7 +26,7 @@ export const models = [
       hp: "402 hp",
     },
     topSpeed: "143 mph",
-    image: "./assets/Taycan_green.jpg",
+    image: "./assets/Taycan_green.webp",
   },
   {
     name: "Taycan Turbo",
@@ -36,7 +37,7 @@ export const models = [
       hp: "871 hp",
     },
     topSpeed: "162 mph",
-    image: "./assets/TaycanTurbo.jpg",
+    image: "./assets/TaycanTurbo.webp",
   },
   {
     name: "Taycan Turbo S",
@@ -58,15 +59,16 @@ export const models = [
       hp: "1,019 hp",
     },
     topSpeed: "180 mph",
-    image: "./assets/TaycanTurboGT.jpg",
+    image: "./assets/TaycanTurboGT.webp",
   },
 ];
 
 export default function ModelCard() {
   return (
-    <section
+    <Reveal
+      as="section"
       id={SECTIONS.MODELS}
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8"
+      className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 mt-10 mb-8"
     >
       {models.map((car) => (
         <div
@@ -104,6 +106,6 @@ export default function ModelCard() {
           </div>
         </div>
       ))}
-    </section>
+    </Reveal>
   );
 }

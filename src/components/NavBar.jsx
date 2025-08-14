@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { SECTIONS } from "../constants/sections";
 import {
   Disclosure,
@@ -24,10 +26,10 @@ function classNames(...classes) {
 
 export default function NavBar() {
   return (
-    <header className="w-full h-[600px] sm:h-[850px] ">
+    <header className="w-full h-[600px] sm:h-[920px]">
       <div
-        className="w-full h-full bg-center bg-no-repeat bg-cover"
-        style={{ backgroundImage: "url(./assets/Taycan_green.jpg)" }}
+        className="w-full h-full bg-center bg-no-repeat bg-cover  "
+        style={{ backgroundImage: "url(./assets/Taycan_green.webp)" }}
       >
         <Disclosure
           aria-label="Principal"
@@ -81,7 +83,8 @@ export default function NavBar() {
                             item.current
                               ? "bg-gray-900 text-white"
                               : "text-white hover:bg-gray-700 hover:text-white",
-                            "rounded-md px-3 py-2 text-sm font-medium"
+                            "rounded-md px-3 py-2 text-sm font-medium",
+                            "transition-transform duration-200 hover:-translate-y-05 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                           )}
                         >
                           {item.name}
@@ -129,19 +132,26 @@ export default function NavBar() {
           id={SECTIONS.HERO}
           className="flex flex-col items-center justify-center text-center px-4 mt-8 sm:mt-12"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl text-white font-semibold drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 5, y: 5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-4xl sm:text-5xl md:text-6xl text-white font-semibold drop-shadow-[0_4px_6px_rgba(0,0,0,0.7)]"
+          >
             Driven By Dreams
-          </h1>
+          </motion.h1>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <a
               href={`#${SECTIONS.MODELS}`}
-              className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition"
+              className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0
+             focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               Especificar
             </a>
             <a
               href={`#${SECTIONS.HIGHLIGHT}`}
-              className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a] transition"
+              className="text-white text-lg rounded-md bg-[#1b3c2e] px-6 py-2 hover:bg-[#164f3a]  transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0
+             focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               Highlights
             </a>
