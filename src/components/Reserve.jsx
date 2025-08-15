@@ -47,7 +47,10 @@ export default function Reserve() {
             FILL OUT FORM BELOW TO RESERVE
           </h2>
 
-          <form action="https://formspree.io/f/xjkozank" method="POST">
+          <form
+            action="https://formspree.io/f/xjkozank?redirect=https://taycan-landing-page.vercel.app/gracias.html"
+            method="POST"
+          >
             {/* Nombre */}
             <div className="flex flex-col gap-1 mb-4 transition-transform duration-200 hover:-translate-y-0.5">
               <label htmlFor="name" className="text-sm font-medium">
