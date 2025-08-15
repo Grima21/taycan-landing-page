@@ -18,6 +18,37 @@ export default function Reserve() {
   // estado controlado para el modelo seleccionado
   const [selectedModel, setSelectedModel] = useState("");
 
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (sending) return;
+    setSending(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // Asegura que el modelo viaje (Listbox no postea solo).
+    if (!data.get("model"))
+      data.set("model", selectedModel || "Sin especificar");
+
+    // Asunto para el email
+    data.set("subject", "Nueva reserva Taycan");
+
+    try {
+      const res = await fetch("https://formspree.io/f/xjkozank", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data, // NO pongas Content-Type con FormData
+      });
+      // opcional: podrías verificar res.ok para logging
+    } catch (_) {
+      // ignoramos: igual redireccionamos
+    } finally {
+      window.location.assign("/gracias.html");
+    }
+  };
+
   return (
     <Reveal
       as="section"
@@ -47,10 +78,7 @@ export default function Reserve() {
             FILL OUT FORM BELOW TO RESERVE
           </h2>
 
-          <form
-            action="https://formspree.io/f/xjkozank?redirect=https://taycan-landing-page.vercel.app/gracias.html"
-            method="POST"
-          >
+          <form onSubmit={handleSubmit} noValidate>
             {/* Nombre */}
             <div className="flex flex-col gap-1 mb-4 transition-transform duration-200 hover:-translate-y-0.5">
               <label htmlFor="name" className="text-sm font-medium">
@@ -93,6 +121,8 @@ export default function Reserve() {
                 id="phone"
                 name="phone"
                 required
+                inputMode="tel"
+                pattern="[0-9+()\\s-]{7,}"
                 className="w-full h-10 rounded-md border border-gray-300 px-3
                            focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:border-emerald-400
                            hover:border-gray-400 transition"
@@ -187,7 +217,6 @@ export default function Reserve() {
               </Listbox>
             </div>
             <input type="hidden" name="model" value={selectedModel} />
-            <input type="hidden" name="subject" value="Nueva reserva Taycan" />
 
             <input
               type="text"
@@ -200,11 +229,14 @@ export default function Reserve() {
             {/* Submit */}
             <button
               type="submit"
+              disabled={sending}
+              aria-busy={sending}
               className="w-full h-10 rounded-md bg-white border border-gray-300 shadow-sm font-medium
                          transition-transform duration-300 hover:-translate-y-0.4 hover:shadow-lg
-                         hover:bg-zinc-900  hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                         hover:bg-zinc-900  hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-black
+                         disable:opacity-60 disabled:cursor-not-allowed"
             >
-              Reservar
+              {sending ? "Enviando…" : "Reservar"}
             </button>
           </form>
         </div>
