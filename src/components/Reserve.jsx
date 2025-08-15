@@ -186,13 +186,9 @@ export default function Reserve() {
                 </div>
               </Listbox>
             </div>
-
+            <input type="hidden" name="model" value={selectedModel} />
             <input type="hidden" name="subject" value="Nueva reserva Taycan" />
-            <input
-              type="hidden"
-              name="redirect"
-              value="https://taycan-landing-page.vercel.app/gracias.html"
-            />
+
             <input
               type="text"
               name="_gotcha"
@@ -200,7 +196,6 @@ export default function Reserve() {
               tabIndex="-1"
               autoComplete="off"
             />
-            <input type="hidden" name="model" value={selectedModel} />
 
             {/* Submit */}
             <button
