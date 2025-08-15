@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gracias – Porsche Taycan</title>
+    <meta
+      name="description"
+      content="Gracias por tu interés. Pronto nos pondremos en contacto contigo."
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu;
+        background: radial-gradient(
+            1200px 600px at 50% -10%,
+            rgba(255, 255, 255, 0.08),
+            transparent 60%
+          )
+          #0a0a0a;
+        color: #e7e7e7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        max-width: 720px;
+        width: 100%;
+        background: rgba(20, 20, 20, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 32px 28px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+      }
+      h1 {
+        font-size: clamp(28px, 4vw, 40px);
+        margin: 0 0 8px;
+        letter-spacing: 0.2px;
+      }
+      p {
+        margin: 0 0 18px;
+        line-height: 1.6;
+        color: #cfcfcf;
+      }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: #fff;
+        color: #111;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease, color 0.2s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        background: #111;
+        color: #fff;
+      }
+      .muted {
+        font-size: 13px;
+        opacity: 0.7;
+      }
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="brand">TAYCAN</div>
+      <h1>¡Gracias! Tu solicitud fue enviada</h1>
+      <p>
+        Pronto nos pondremos en contacto para continuar con tu reserva del
+        <strong>Porsche Taycan</strong>. Mientras tanto, puedes seguir
+        explorando los modelos y especificaciones.
+      </p>
+      <p class="muted">
+        Si no ves nuestro correo en unos minutos, revisa tu carpeta de spam o
+        promociones.
+      </p>
+      <div style="margin-top: 20px">
+        <a class="cta" href="/">Volver al sitio</a>
+        <a class="cta" href="/#models" style="margin-left: 8px">Ver modelos</a>
+      </div>
+    </main>
+  </body>
+</html>

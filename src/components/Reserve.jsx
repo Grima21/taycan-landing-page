@@ -47,14 +47,7 @@ export default function Reserve() {
             FILL OUT FORM BELOW TO RESERVE
           </h2>
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const data = new FormData(e.currentTarget);
-              // aquí podrías manejar el submit
-              // console.log(Object.fromEntries(data.entries()));
-            }}
-          >
+          <form action="https://formspree.io/f/xjkozank" method="POST">
             {/* Nombre */}
             <div className="flex flex-col gap-1 mb-4 transition-transform duration-200 hover:-translate-y-0.5">
               <label htmlFor="name" className="text-sm font-medium">
@@ -190,6 +183,21 @@ export default function Reserve() {
                 </div>
               </Listbox>
             </div>
+
+            <input type="hidden" name="subject" value="Nueva reserva Taycan" />
+            <input
+              type="hidden"
+              name="redirect"
+              value="https://taycan-landing-page.vercel.app/gracias.html"
+            />
+            <input
+              type="text"
+              name="_gotcha"
+              className="hidden"
+              tabIndex="-1"
+              autoComplete="off"
+            />
+            <input type="hidden" name="model" value={selectedModel} />
 
             {/* Submit */}
             <button
